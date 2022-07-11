@@ -3,7 +3,7 @@ class Game {
     this.backGround = new Image();
     this.backGround.src = "./image/background.png";
     this.ninja = new Ninja();
-    this.jadeArr = [new Jade(0, "./image/jade.png")];
+    this.jadeArr = [new Jade()];
     this.counterJade = 0;
     this.damageArr = [new Damage(0, "./image/damage1.png")];
     this.damageSpace = 600;
@@ -19,7 +19,7 @@ class Game {
       this.counterJade === 25 ||
       this.counterJade === 40
     ) {
-      this.jadeArr.push(new Jade(0, "./image/jade.png"));
+      this.jadeArr.push(new Jade());
       this.counterJade++;
     } else if (
       this.counterJade === 15 ||
@@ -30,11 +30,13 @@ class Game {
     }
   };
 
-  // AGREGAR LOS CUCHILLOS
+  // AGREGAR LOS CUCHILLOS (aplicando nueva variable image y llevandola al parametro para colocar multiples armas)
   addNewDamage = () => {
     if (this.damageArr[this.damageArr.length - 1].x < 600) {
       let randomPosition = Math.random() * 600;
-      let newDamage = new Damage(randomPosition, "./image/damage1.png");
+      const randomPositionDamage = Math.floor(Math.random() * 3) + 1;
+      const image = `./image/damage${randomPositionDamage}.png`;
+      let newDamage = new Damage(randomPosition, image);
       this.damageArr.push(newDamage);
       this.damageCounter++;
     }
@@ -48,7 +50,7 @@ class Game {
       } else if (this.score > 12 && this.score < 20) {
         eachDamage.speed = 3;
       } else if (this.score > 20) {
-        eachDamage.speed = 5;
+        eachDamage.speed = 4;
       }
     });
   };

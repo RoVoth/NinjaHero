@@ -11,6 +11,16 @@ class Ninja {
 
   drawNinja = () => {
     ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+    if (this.x + this.w + this.speed > canvas.width) {
+      this.x = canvas.width - this.speed - this.w - 1;
+    } else if (this.x < 0) {
+      this.x = 1;
+    }
+    if (this.y + this.h > canvas.height) {
+      this.y = canvas.height - this.h - 1;
+    } else if (this.y < 0) {
+      this.y = 1;
+    }
   };
 
   // METODOS DE MOVER AL NINJA

@@ -35,7 +35,6 @@ const startGame = () => {
 const keyPressUp = (event) => {
   if (event.code === "ArrowUp") {
     game.ninja.upNinja();
-    game.counterForJade++;
   }
 };
 const keyPressDown = (event) => {

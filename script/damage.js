@@ -1,12 +1,12 @@
 class Damage {
-  constructor(yParam) {
+  constructor(yParam, image) {
     this.image = new Image();
-    this.image.src = "./image/damage1.png";
+    this.image.src = image;
     this.x = canvas.width + 50;
     this.y = yParam;
     this.w = 60;
     this.h = 30;
-    this.speed = 2;
+    this.speed = 1;
   }
 
   // METODOS
