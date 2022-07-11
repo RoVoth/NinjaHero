@@ -1,0 +1,19 @@
+class Jade {
+  constructor() {
+    this.image = new Image();
+    this.image.src = "./image/jade.png";
+    this.x = Math.floor(Math.random() * 700);
+    this.y = Math.floor(Math.random() * 500);
+    this.w = 50;
+    this.h = 50;
+    this.speed = 2;
+  }
+
+  drawJade = () => {
+    ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+  };
+
+  moveJade = () => {
+    this.x = this.x - this.speed;
+  };
+}

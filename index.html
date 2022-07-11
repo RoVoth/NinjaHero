@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Ninja Hero</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="intro-screen" class="container">
+        <img src="./image/mainPage.png" width="800" alt="" />
+        <button id="play-btn">
+          <img src="./image/buttonPlay.png" width="150" alt="" />
+        </button>
+      </div>
+
+      <canvas id="my-canvas" width="800" height="600"></canvas>
+      <div id="gameover-screen" class="container">
+        <img src="./image/gameOverPage.png" width="800" alt="" />
+        <button id="playagain-btn">
+          <img src="./image/buttonPlayAgain.png" width="150" alt="" />
+        </button>
+      </div>
+      <div>
+        <div id="score">
+          <span>SCORE:</span><span id="score-accumulator">0</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script/main.js"></script>
+    <script src="./script/game.js"></script>
+    <script src="./script/ninja.js"></script>
+    <script src="./script/jade"></script>
+    <script src="./script/damage.js"></script>
+  </body>
+</html>
