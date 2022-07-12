@@ -8,6 +8,11 @@ class Game {
     this.damageArr = [new Damage(0, "./image/damage1.png")];
     this.damageSpace = 600;
     this.damageCounter = this.damageArr.length;
+    this.livesArr = [
+      new Live(680, "./image/ninjaLife.png"),
+      new Live(720, "./image/ninjaLife.png"),
+      new Live(760, "./image/ninjaLife.png"),
+    ];
     this.isGameOn = true;
     this.score = 0;
   }
@@ -45,11 +50,11 @@ class Game {
   // AGREGAR DIFICULTAL
   addDifficult = () => {
     this.damageArr.forEach((eachDamage) => {
-      if (this.score > 5 && this.score < 12) {
+      if (this.score > 15 && this.score < 30) {
         eachDamage.speed = 2;
-      } else if (this.score > 12 && this.score < 20) {
+      } else if (this.score > 30 && this.score < 40) {
         eachDamage.speed = 3;
-      } else if (this.score > 20) {
+      } else if (this.score > 40) {
         eachDamage.speed = 4;
       }
     });
@@ -81,6 +86,9 @@ class Game {
     this.jadeArr.forEach((eachJade) => {
       eachJade.drawJade();
     });
+    this.livesArr.forEach((eachLive) => {
+      eachLive.drawLives();
+    });
 
     // RECURSION
 
@@ -109,17 +117,21 @@ class Game {
   };
 
   gameOverCollision = () => {
-    this.damageArr.forEach((eachDamage) => {
+    this.damageArr.forEach((eachDamage, i) => {
       if (
         this.ninja.x < eachDamage.x + eachDamage.w &&
         this.ninja.x + this.ninja.w > eachDamage.x &&
         this.ninja.y < eachDamage.y + eachDamage.h &&
         this.ninja.h + this.ninja.y > eachDamage.y
       ) {
-        this.isGameOn = false;
-        canvas.style.display = "none";
-        gameOverScreenDOM.style.display = "flex";
-        audio.pause();
+        this.damageArr.splice(i, 1);
+        this.livesArr.pop();
+        if (this.livesArr.length === 0) {
+          this.isGameOn = false;
+          canvas.style.display = "none";
+          gameOverScreenDOM.style.display = "flex";
+          audio.pause();
+        }
       }
     });
   };

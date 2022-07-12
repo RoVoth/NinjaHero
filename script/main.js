@@ -55,6 +55,6 @@ const keyPressRight = (event) => {
     game.ninja.rigthNinja();
   }
 };
-
+// ADD EVENT
 playBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);
