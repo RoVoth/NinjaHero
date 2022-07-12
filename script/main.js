@@ -9,6 +9,7 @@ const gameOverScreenDOM = document.querySelector("#gameover-screen");
 const restartBtn = document.querySelector("#playagain-btn");
 let scoreAccumula = document.querySelector("#score-accumulator");
 let scoreName = document.querySelector("#score");
+const audio = new Audio("./audio/gameAudio.mp3");
 
 let game;
 
@@ -20,6 +21,8 @@ const startGame = () => {
   canvas.style.display = "block";
   scoreAccumula.style.display = "flex";
   scoreAccumula.innerText = 0;
+  audio.play();
+  audio.loop = true;
 
   // ADD EVENT
 

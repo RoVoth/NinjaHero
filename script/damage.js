@@ -4,8 +4,8 @@ class Damage {
     this.image.src = image;
     this.x = canvas.width + 50;
     this.y = yParam;
-    this.w = 60;
-    this.h = 30;
+    this.w = 50;
+    this.h = 25;
     this.speed = 1;
   }
 

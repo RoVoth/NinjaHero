@@ -119,6 +119,7 @@ class Game {
         this.isGameOn = false;
         canvas.style.display = "none";
         gameOverScreenDOM.style.display = "flex";
+        audio.pause();
       }
     });
   };
