@@ -9,8 +9,8 @@ const gameOverScreenDOM = document.querySelector("#gameover-screen");
 const restartBtn = document.querySelector("#playagain-btn");
 let scoreAccumula = document.querySelector("#score-accumulator");
 let scoreName = document.querySelector("#score");
-const audio = new Audio("./audio/gameAudio.mp3");
-audio.volume = 0.1;
+const audio = new Audio("./audio/audio.mp3");
+audio.volume = 1;
 audio.preload = "auto";
 audio.load();
 
@@ -26,7 +26,7 @@ const startGame = () => {
   scoreAccumula.innerText = 0;
   audio.load();
   audio.play();
-  audio.loop = true;
+  //audio.loop = true;
 
   // ADD EVENT
 
