@@ -17,6 +17,7 @@ class Game {
     this.score = 0;
   }
 
+  //REMOVER LAS ARMAS CUANDO SALGAN DE LA PANTALA
   removeDamageFromArray = () => {
     //console.log(this.damageArr.length);
     if (this.damageArr[0].x + this.damageArr[0].w < 0) {
