@@ -17,6 +17,13 @@ class Game {
     this.score = 0;
   }
 
+  removeDamageFromArray = () => {
+    //console.log(this.damageArr.length);
+    if (this.damageArr[0].x + this.damageArr[0].w < 0) {
+      this.damageArr.shift();
+    }
+  };
+
   // MUESTRA LAS JADE PARA COLECTAR
   appearsJade = () => {
     if (
