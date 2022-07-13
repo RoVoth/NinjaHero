@@ -10,6 +10,9 @@ const restartBtn = document.querySelector("#playagain-btn");
 let scoreAccumula = document.querySelector("#score-accumulator");
 let scoreName = document.querySelector("#score");
 const audio = new Audio("./audio/gameAudio.mp3");
+audio.volume = 0.1;
+audio.preload = "auto";
+audio.load();
 
 let game;
 
@@ -21,6 +24,7 @@ const startGame = () => {
   canvas.style.display = "block";
   scoreAccumula.style.display = "flex";
   scoreAccumula.innerText = 0;
+  audio.load();
   audio.play();
   audio.loop = true;
 
