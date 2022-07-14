@@ -9,12 +9,27 @@ const gameOverScreenDOM = document.querySelector("#gameover-screen");
 const restartBtn = document.querySelector("#playagain-btn");
 let scoreAccumula = document.querySelector("#score-accumulator");
 let scoreName = document.querySelector("#score");
+
+let game;
+
+// MUSIC
+//GAME MUSIC
 const audio = new Audio("./audio/audio.mp3");
 audio.volume = 0.5;
 audio.preload = "auto";
 audio.load();
 
-let game;
+//JADE SOUND
+const audioJade = new Audio("./audio/jade.mp3");
+audioJade.volume = 0.2;
+audioJade.preload = "auto";
+audioJade.load();
+
+//DAMAGE SOUND
+const audioDamage = new Audio("./audio/damage.mp3");
+audioDamage.volumen = 0.2;
+audioDamage.preload = "auto";
+audioDamage.load();
 
 // FUNCIONES
 

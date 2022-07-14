@@ -122,6 +122,7 @@ class Game {
         this.jadeArr.push(this.jade);
         this.score = this.score + 5;
         scoreAccumula.innerText = this.score;
+        audioJade.play();
       }
     });
   };
@@ -153,6 +154,7 @@ class Game {
         this.ninja.y < eachDamage.y + eachDamage.h &&
         this.ninja.h + this.ninja.y > eachDamage.y
       ) {
+        audioDamage.play();
         this.damageArr.splice(i, 1);
         this.livesArr.pop();
         if (this.livesArr.length === 0) {
