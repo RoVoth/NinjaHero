@@ -128,17 +128,12 @@ class Game {
   };
 
   shieldActivation() {
-    if (
-      this.score === 30 ||
-      this.score === 60 ||
-      this.score === 90 ||
-      this.score === 120
-    ) {
+    if (this.score % 30 === 0 && this.score > 0) {
       this.shield = true;
     } else
       setTimeout(() => {
         this.turnOffTheShield();
-      }, 3000);
+      }, 1000);
   }
 
   turnOffTheShield() {
@@ -161,6 +156,8 @@ class Game {
           this.isGameOn = false;
           canvas.style.display = "none";
           gameOverScreenDOM.style.display = "flex";
+          scoreName.style.display = "flex";
+          scoreAccumula.style.display = "flex";
           audio.pause();
         }
       }
