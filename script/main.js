@@ -15,7 +15,7 @@ let game;
 // MUSIC
 //GAME MUSIC
 const audio = new Audio("./audio/audio.mp3");
-audio.volume = 0.5;
+audio.volume = 0.4;
 audio.preload = "auto";
 audio.load();
 
