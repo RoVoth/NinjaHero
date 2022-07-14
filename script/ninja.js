@@ -2,15 +2,33 @@ class Ninja {
   constructor() {
     this.image = new Image();
     this.image.src = "./image/ninjaPos1.png";
+    this.image2 = new Image();
+    this.image2.src = "./image/ninjaShield.png";
     this.x = 0;
     this.y = 500;
     this.w = 95;
+    this.w1 = 145;
     this.h = 95;
+    this.h1 = 145;
     this.speed = 40;
   }
 
-  drawNinja = () => {
-    ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+  drawNinja = (activeShield) => {
+    let imageToDraw = undefined;
+    let wToDraw = undefined;
+    let hToDraw = undefined;
+
+    if (activeShield === true) {
+      imageToDraw = this.image2;
+      wToDraw = this.w1;
+      hToDraw = this.h1;
+    } else {
+      imageToDraw = this.image;
+      wToDraw = this.w;
+      hToDraw = this.h;
+    }
+
+    ctx.drawImage(imageToDraw, this.x, this.y, wToDraw, hToDraw);
     if (this.x + this.w + this.speed > canvas.width) {
       this.x = canvas.width - this.speed - this.w - 1;
     } else if (this.x < 0) {

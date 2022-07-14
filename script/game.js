@@ -13,6 +13,7 @@ class Game {
       new Live(720, "./image/ninjaLife.png"),
       new Live(760, "./image/ninjaLife.png"),
     ];
+    this.shield = false;
     this.isGameOn = true;
     this.score = 0;
   }
@@ -58,11 +59,11 @@ class Game {
   // AGREGAR DIFICULTAL
   addDifficult = () => {
     this.damageArr.forEach((eachDamage) => {
-      if (this.score > 15 && this.score < 30) {
+      if (this.score > 30 && this.score < 60) {
         eachDamage.speed = 2;
-      } else if (this.score > 30 && this.score < 40) {
+      } else if (this.score > 60 && this.score < 90) {
         eachDamage.speed = 3;
-      } else if (this.score > 40) {
+      } else if (this.score > 90) {
         eachDamage.speed = 4;
       }
     });
@@ -80,12 +81,13 @@ class Game {
     this.addNewDamage();
     this.addDifficult();
     this.jadeCollision();
+    this.shieldActivation();
     this.gameOverCollision();
 
     // 3 dibujar elementos
 
     ctx.drawImage(this.backGround, 0, 0, canvas.width, canvas.height);
-    this.ninja.drawNinja();
+    this.ninja.drawNinja(this.shield);
 
     this.damageArr.forEach((eachDamage) => {
       eachDamage.drawDamage();
@@ -124,9 +126,28 @@ class Game {
     });
   };
 
+  shieldActivation() {
+    if (
+      this.score === 30 ||
+      this.score === 60 ||
+      this.score === 90 ||
+      this.score === 120
+    ) {
+      this.shield = true;
+    } else
+      setTimeout(() => {
+        this.turnOffTheShield();
+      }, 3000);
+  }
+
+  turnOffTheShield() {
+    this.shield = false;
+  }
+
   gameOverCollision = () => {
     this.damageArr.forEach((eachDamage, i) => {
       if (
+        this.shield === false &&
         this.ninja.x < eachDamage.x + eachDamage.w &&
         this.ninja.x + this.ninja.w > eachDamage.x &&
         this.ninja.y < eachDamage.y + eachDamage.h &&
