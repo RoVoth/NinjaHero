@@ -99,7 +99,7 @@ Add Event
 
 URls for the project repo and deploy
 [Link Repo](https://github.com/RoVoth/NinjaHero)
-[Link Deploy](<(https://rovoth.github.io/NinjaHero/)>)
+[Link Deploy](https://rovoth.github.io/NinjaHero/)
 
 ### Slides
 
