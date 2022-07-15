@@ -20,13 +20,13 @@ let game;
 // MUSIC
 //GAME MUSIC
 const audio = new Audio("./audio/audio.mp3");
-audio.volume = 0.4;
+audio.volume = 0.1;
 audio.preload = "auto";
 audio.load();
 
 //JADE SOUND
 const audioJade = new Audio("./audio/jade.mp3");
-audioJade.volume = 0.3;
+audioJade.volume = 0.1;
 audioJade.preload = "auto";
 audioJade.load();
 

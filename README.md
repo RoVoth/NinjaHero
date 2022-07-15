@@ -54,6 +54,7 @@ Add Event
 ## game.js
 
 - Class Game
+- AudioGame
 - this.appearsJade();
 - this.addNewDamage();
 - this.addDifficult();
@@ -93,3 +94,14 @@ Add Event
 - videoIntro
 - gameScreen (my-canvas)
 - gameOver&Retry Screen
+
+# Links
+
+URls for the project repo and deploy
+[Link Repo](https://github.com/RoVoth/NinjaHero)
+[Link Deploy](<(https://rovoth.github.io/NinjaHero/)>)
+
+### Slides
+
+URls for the poject presentation (slides)
+[Link Slides.com](https://docs.google.com/presentation/d/1H0XhJ9Iko5g2ENg_EdbiR_7th-D6A5vQO0sm0b0zsE8/edit?usp=sharing)
